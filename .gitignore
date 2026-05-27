@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Environment
+.env
+*.env
+.venv/
+venv/
+
+# Data (too large for git)
+data/raw/
+output/
+
+# Models (cached by sentence-transformers)
+*.bin
+*.gguf
+models/
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.idea/
+.vscode/
+*.code-workspace
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Temp
+*.tmp
+*.log
