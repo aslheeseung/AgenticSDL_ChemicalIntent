@@ -278,7 +278,7 @@ check_capabilities_feasibility(필수!), check_equipment_compatibility, get_proc
 # ============================================================
 # Build Team
 # ============================================================
-def build_team():
+def build_team(termination=None):
     extractor = AssistantAgent(
         name="Literature_Extractor",
         model_client=model_client,
@@ -307,7 +307,8 @@ def build_team():
         ] if n in tool_map],
     )
 
-    termination = TextMentionTermination("CID_COMPLETE") | MaxMessageTermination(10)
+    if termination is None:
+        termination = TextMentionTermination("CID_COMPLETE") | MaxMessageTermination(10)
 
     return RoundRobinGroupChat(
         participants=[extractor, cid_agent, experimental],
