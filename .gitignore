@@ -13,9 +13,10 @@ build/
 .venv/
 venv/
 
-# Data (too large for git)
+# Data (raw files too large, but archive is ok)
 data/raw/
 output/
+!data/oer_raw_data.tar.gz
 
 # Models (cached by sentence-transformers)
 *.bin
